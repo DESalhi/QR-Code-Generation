@@ -64,50 +64,6 @@ def get_unique_filename(directory, base_name, extension):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     return os.path.join(directory, f"{base_name}_{timestamp}.{extension}")
 
-def main():
-    try:
-        # Configure command line arguments
-        parser = argparse.ArgumentParser(description='QR Code Generator')
-        parser.add_argument('--data', type=str, help='Data to encode')
-        parser.add_argument('--output', type=str, help='Output path')
-        parser.add_argument('--logo', type=str, help='Logo to embed')
-        args = parser.parse_args()
-
-        # Get data if not provided as argument
-        data = args.data if args.data else input("Enter data to encode in QR Code: ")
-        if not data:
-            raise ValueError("Data cannot be empty.")
-
-        # Get logo if not provided as argument
-        logo_path = args.logo
-        if not logo_path and input("Add a logo? (y/n): ").lower() == 'y':
-            logo_path = input("Enter logo path: ")
-
-        # Generate QR code
-        img = generate_qr_code(
-            data=data,
-            logo_path=logo_path if logo_path and os.path.exists(logo_path) else None
-        )
-        
-        # Display image
-        img.show()
-
-        # Save image
-        save_option = 'y' if args.output else input("Save QR Code? (y/n): ")
-        if save_option.lower() == 'y':
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            
-            # Use provided path or generate unique name
-            if args.output:
-                file_path = args.output
-            else:
-                file_path = get_unique_filename(script_dir, "qrcode", "png")
-            
-            img.save(file_path)
-            print(f"Image saved successfully: {file_path}")
-            
-    except Exception as e:
-        print(f"An error occurred: {str(e)}")
 
 if __name__ == '__main__':
-    main()
+    print("Veuillez utiliser l'interface graphique PyQt5 : python qr_code_gui_pyqt5.py")

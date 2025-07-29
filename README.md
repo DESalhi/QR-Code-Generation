@@ -1,24 +1,30 @@
 # QR-Code-Generation
-A simple Python project to generate QR codes.
+A modern Python project to generate QR codes with a PyQt5 graphical interface.
 
 ## Requirements
 - Python 3.x
 - qrcode library
 - Pillow library
+- PyQt5
 
 ## Installation
 1. Clone or download the repository to your local machine.
-2. Install the required libraries using pip by running the following command in your terminal:
+2. Install the required libraries using pip:
 
-- pip install qrcode Pillow
+   pip install qrcode Pillow PyQt5
 
 ## Usage
-1. Run the qr_code_generator.py file using the following command:
+Run the PyQt5 graphical interface:
 
-python qr_code_generator.py
+   python qr_code_gui_pyqt5.py
 
-2. Enter the data you want to encode in the QR code.
-3. The QR code image will be generated and displayed.
+Features:
+- Enter data to encode and optionally select a logo image.
+- Customize fill and background colors.
+- Preview the QR code instantly.
+- Save the QR code as PNG, JPEG, or SVG.
+
+All code comments are now in English for clarity.
 
 ## Contributing
 If you want to contribute to this project, feel free to create a pull request or report any issues.
@@ -26,5 +32,5 @@ If you want to contribute to this project, feel free to create a pull request or
 ## License
 This project is licensed under the MIT license.
 
-##  Author
+## Author
 Dhia Elhak Salhi
